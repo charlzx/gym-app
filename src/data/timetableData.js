@@ -1,9 +1,22 @@
 export const timetableData = [
-  { day: 'Monday', classes: ['Yoga - 9am', 'Cardio - 12pm', 'Zumba - 6pm'] },
-  { day: 'Tuesday', classes: ['Strength - 9am', 'HIIT - 12pm', 'Pilates - 6pm'] },
-  { day: 'Wednesday', classes: ['Yoga - 9am', 'Spin - 12pm', 'Boxing - 6pm'] },
-  { day: 'Thursday', classes: ['CrossFit - 9am', 'Cardio - 12pm', 'Dance - 6pm'] },
-  { day: 'Friday', classes: ['Pilates - 9am', 'HIIT - 12pm', 'Strength - 6pm'] },
-  { day: 'Saturday', classes: ['Zumba - 10am', 'Boxing - 1pm'] },
-  { day: 'Sunday', classes: ['Rest Day'] }
+  {
+    time: '6:00 AM',
+    classes: ['Yoga', 'Pilates', 'Spin', 'HIIT', 'Restorative', 'Strength'],
+    colors: ['blue', 'green', 'purple', 'red', 'orange', 'blue'],
+  },
+  {
+    time: '8:00 AM',
+    classes: ['CrossFit', 'Strength', 'Restorative', 'Cardio', 'Spin', 'Zumba'],
+    colors: ['red', 'orange', 'green', 'blue', 'purple', 'red'],
+  },
+  {
+    time: '5:00 PM',
+    classes: ['Zumba', 'HIIT', 'Yoga', 'Pilates', 'Spin', 'CrossFit'],
+    colors: ['orange', 'blue', 'purple', 'green', 'red', 'blue'],
+  },
+  {
+  time: '7:00 PM',
+  classes: ['Evening HIIT', 'Open Gym', 'Night Ride', 'Open Gym', 'Evening HIIT', 'Open Gym'],
+  colors: ['red', 'white', 'green', 'white', 'red', 'white'],
+  }
 ];
