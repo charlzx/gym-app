@@ -1,27 +1,16 @@
-import React from 'react';
-import './index.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Timetable from './components/Timetable';
-import Instructors from './components/Instructors';
-import AIPlanner from './components/AIPlanner';
-import Faq from './components/Faq';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Authpage from './pages/Auth';
+import Planner from './pages/Planner';
 
-export default function App() {
+const App = () => {
   return (
-    <div className="bg-gray-900 text-gray-300" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
-      <Header />
-      <main className="pt-16">
-        <Hero />
-        <Timetable />
-        <Instructors />
-        <AIPlanner />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Auth" element={<Authpage />} />
+      <Route path="/Planner" element={<Planner />} />
+    </Routes>
   );
-}
+};
+
+export default App;
