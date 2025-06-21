@@ -1,13 +1,15 @@
 import React from 'react';
+import { FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <footer className="bg-gray-800 text-gray-400">
             <div className="container mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
                     {/* About Section */}
                     <div>
-                        <h3 className="text-white font-bold mb-4">SAMPLE Gym</h3>
+                        <h3 className="text-white font-bold mb-4">SMART Gym</h3>
                         <p className="text-sm">
                             Our mission is to provide a world-class fitness environment that supports the health and wellness of our community.
                         </p>
@@ -38,37 +40,47 @@ const Footer = () => {
                     {/* Social Media */}
                     <div>
                         <h3 className="text-white font-bold mb-4">Connect With Us</h3>
-                        <div className="flex space-x-4 mb-4">
-                            {/* Instagram */}
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"
-                                className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07..." />
-                                </svg>
+                        <div className="flex space-x-4">
+                            <a
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                title="Instagram"
+                                className="text-gray-400 hover:text-blue-400 transition-colors"
+                            >
+                                <FaInstagram className="w-4 h-4" />
                             </a>
 
-                            {/* TikTok */}
-                            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"
-                                className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02..." />
-                                </svg>
+                            <a
+                                href="https://tiktok.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="TikTok"
+                                title="TikTok"
+                                className="text-gray-400 hover:text-blue-400 transition-colors"
+                            >
+                                <FaTiktok className="w-4 h-4" />
                             </a>
 
-                            {/* YouTube */}
-                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"
-                                className="text-gray-400 hover:text-blue-400 transition-colors">
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136..." />
-                                </svg>
+                            <a
+                                href="https://youtube.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="YouTube"
+                                title="YouTube"
+                                className="text-gray-400 hover:text-blue-400 transition-colors"
+                            >
+                                <FaYoutube className="w-4 h-4" />
                             </a>
                         </div>
                     </div>
+
                 </div>
 
                 {/* Copyright */}
                 <div className="mt-8 border-t border-gray-700 pt-6 text-center text-sm">
-                    <p>&copy; {new Date().getFullYear()} SAMPLE Gym. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} SMART Gym. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

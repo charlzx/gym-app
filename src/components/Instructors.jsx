@@ -21,9 +21,13 @@ const Instructors = () => {
                             />
                             <div className="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
                                 <div className="instructor-card-content w-full text-left">
-                                    <h3 className="text-2xl font-bold text-white">{inst.name}</h3>
-                                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
+                                    <div className="bottom-4 left-4 opacity-100 transform translate-y-[4.5rem] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                                        <h3 className="text-2xl font-bold text-white"
+                                        >{inst.name}</h3>
                                         <p className="text-blue-400 font-semibold">{inst.title}</p>
+                                    </div>
+                                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
+                                        
                                         <p className="text-gray-300 text-sm mt-1">{inst.specialty}</p>
                                     </div>
                                 </div>
