@@ -14,9 +14,9 @@ const Hero = () => {
   }, [nextSlide]);
 
   return (
-    <section id="hero" className="relative w-full h-[85vh] overflow-hidden">
+    <section id="hero" className="relative w-full min-h-[50vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Image Slideshow */}
-      <div className="w-full h-full relative z-0">
+      <div className="absolute inset-0 w-full h-full z-0">
         {heroImages.map((src, index) => (
           <div
             key={src}
@@ -39,9 +39,11 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/70 z-10" />
 
       {/* Hero Text */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white p-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">DEFINE YOUR STRENGTH</h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl drop-shadow-md">
+      <div className="relative z-20 flex flex-col items-center justify-center text-center text-white p-4 w-full">
+        <h1 className="text-3xl md:text-6xl font-bold mb-4 drop-shadow-lg leading-tight">
+          DEFINE YOUR STRENGTH
+        </h1>
+        <p className="text-base md:text-xl mb-8 max-w-2xl drop-shadow-md">
           Achieve your fitness goals in a clean, modern, and motivating environment.
         </p>
         <a

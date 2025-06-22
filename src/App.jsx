@@ -9,6 +9,7 @@ import Membership from './pages/Membership';
 import TimetablePage from './pages/TimetablePg';
 import InstructorsPage from './pages/InstructorsPg';
 import NotFoundPage from './pages/404';
+import Style from './pages/Style';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Route path="/TimetablePg" element={<TimetablePage />} />
       <Route path="/InstructorsPg" element={<InstructorsPage />} />
       <Route path="*" element={<NotFoundPage />} />
+      <Route path="/Style" element={<Style />} />
 
     </Routes>
   );
