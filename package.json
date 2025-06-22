@@ -1,13 +1,16 @@
 {
-  "name": "my-gym-app",
+  "name": "gym-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://charlzx.github.io/gym-app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --repo=https://github.com/charlzx/gym-app.git"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
