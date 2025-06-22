@@ -12,7 +12,7 @@ const Instructors = () => {
                     {instructorsData.map(inst => (
                         <div
                             key={inst.name}
-                            className="group relative rounded-lg overflow-hidden shadow-lg transform-gpu transition duration-500 hover:scale-105 hover:-rotate-1"
+                            className="group relative rounded-lg overflow-hidden shadow-lg transform-gpu transition duration-500 hover:scale-105 hover:-rotate-1 m-2"
                         >
                             <img
                                 src={inst.img}
@@ -28,7 +28,7 @@ const Instructors = () => {
                                     </div>
                                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
                                         
-                                        <p className="text-gray-300 text-sm mt-1">{inst.specialty}</p>
+                                        <p className="text-gray-300 text-sm mt-1">{inst.bio}</p>
                                     </div>
                                 </div>
                             </div>
