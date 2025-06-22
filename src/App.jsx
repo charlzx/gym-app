@@ -22,7 +22,8 @@ const App = () => {
       <Route path="/Membership" element={<Membership />} />
       <Route path="/TimetablePg" element={<TimetablePage />} />
       <Route path="/InstructorsPg" element={<InstructorsPage />} />
-      <Route path="/404" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+
     </Routes>
   );
 };
