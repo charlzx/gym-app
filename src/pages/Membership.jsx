@@ -217,7 +217,7 @@ const MembershipPage = () => {
   return (
     <div className="bg-gray-900" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
       <Header />
-      <section id="membership" className="py-16 sm:py-24">
+      <section id="membership" className="py-16 sm:py-24 pt-30">
         <div className="container mx-auto px-6 md:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-white">Membership Plans</h1>

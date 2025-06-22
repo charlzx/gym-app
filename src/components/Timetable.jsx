@@ -19,10 +19,10 @@ const Timetable = () => {
         </div>
 
         <div className="overflow-x-auto shadow-lg rounded-lg">
-          <table className="w-full text-sm text-center text-gray-300">
+          <table className="min-w-full text-sm text-center text-gray-300 border-separate border-spacing-0">
             <thead className="text-xs text-white uppercase bg-gray-700">
               <tr>
-                <th className="px-6 py-4">Time</th>
+                <th className="px-6 py-4 sticky left-0 z-10 bg-gray-700">Time</th>
                 <th className="px-6 py-4">Monday</th>
                 <th className="px-6 py-4">Tuesday</th>
                 <th className="px-6 py-4">Wednesday</th>
@@ -37,7 +37,9 @@ const Timetable = () => {
                   key={row.time}
                   className={`${rowIndex % 2 === 0 ? 'bg-gray-900' : 'bg-gray-800'} border-b border-gray-700`}
                 >
-                  <th className="px-6 py-4 font-medium text-white whitespace-nowrap">{row.time}</th>
+                  <th className="px-6 py-4 font-medium text-white sticky left-0 z-10 bg-inherit">
+                    {row.time}
+                  </th>
                   {row.classes.map((className, classIndex) => (
                     <td
                       key={classIndex}

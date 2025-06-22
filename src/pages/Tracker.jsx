@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// --- Workout Log Modal ---
+// --- Workout Log Modal --- (unchanged)
+
 const WorkoutLogModal = ({ date, workout, onClose, onSave, onDelete }) => {
     const [type, setType] = useState(workout ? workout.type : 'Strength');
     const [duration, setDuration] = useState(workout ? workout.duration : '');
@@ -15,14 +16,14 @@ const WorkoutLogModal = ({ date, workout, onClose, onSave, onDelete }) => {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md">
+            <div className="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="text-2xl font-bold text-white">
                         {workout ? 'Edit Workout' : 'Log Workout'}
                     </h3>
-                    <button onClick={onClose} className="text-gray-400 hover:text-white">&times;</button>
+                    <button onClick={onClose} className="text-gray-400 hover:text-white text-2xl">&times;</button>
                 </div>
-                <p className="text-blue-400 font-semibold mb-4">
+                <p className="text-blue-400 font-semibold mb-4 text-sm">
                     {date.toLocaleDateString('en-US', {
                         weekday: 'long',
                         year: 'numeric',
@@ -60,7 +61,7 @@ const WorkoutLogModal = ({ date, workout, onClose, onSave, onDelete }) => {
                         </div>
                     )}
                 </div>
-                <div className="mt-8 flex gap-4">
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
                     <button
                         onClick={handleSave}
                         className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300"
@@ -82,6 +83,7 @@ const WorkoutLogModal = ({ date, workout, onClose, onSave, onDelete }) => {
 };
 
 // --- Main Tracker Page ---
+
 const WorkoutTrackerPage = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
     const [loggedWorkouts, setLoggedWorkouts] = useState({});
@@ -138,29 +140,29 @@ const WorkoutTrackerPage = () => {
         <div className="bg-gray-900 min-h-screen" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
             <Header />
             <main className="pt-24 pb-16">
-                <section className="container mx-auto px-6">
-                    <div className="text-center mb-16">
+                <section className="container mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-extrabold text-white">Workout Tracker</h1>
                         <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
                             Log your sessions, track your consistency, and stay motivated. Click on a day to log your workout.
                         </p>
                     </div>
 
-                    <div className="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-6">
-                        <div className="flex justify-between items-center mb-6">
+                    <div className="mx-auto bg-gray-800 rounded-lg shadow-2xl p-4 sm:p-6 max-w-full overflow-x-auto">
+                        <div className="flex justify-between items-center mb-4 sm:mb-6">
                             <button onClick={() => changeMonth(-1)} className="p-2 rounded-full hover:bg-gray-700 text-white">&larr;</button>
-                            <h2 className="text-2xl font-bold text-white">
+                            <h2 className="text-xl sm:text-2xl font-bold text-white text-center">
                                 {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
                             </h2>
                             <button onClick={() => changeMonth(1)} className="p-2 rounded-full hover:bg-gray-700 text-white">&rarr;</button>
                         </div>
 
-                        <div className="grid grid-cols-7 gap-1 text-center">
+                        <div className="grid grid-cols-7 gap-1 text-center text-xs sm:text-sm">
                             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                                <div key={day} className="font-bold text-xs text-gray-400 uppercase tracking-wider py-2">{day}</div>
+                                <div key={day} className="font-bold text-gray-400 uppercase tracking-wider py-2">{day}</div>
                             ))}
                             {days.map((d, index) => {
-                                if (!d) return <div key={`empty-${index}`} />;
+                                if (!d) return <div key={`empty-${index}`} className="h-16 sm:h-24" />;
                                 const today = new Date();
                                 today.setHours(0, 0, 0, 0);
                                 const isToday = d.getTime() === today.getTime();
@@ -175,14 +177,15 @@ const WorkoutTrackerPage = () => {
                                 return (
                                     <div
                                         key={d.toISOString()}
-                                        className={`relative h-24 p-2 border border-gray-700/50 rounded-md transition-colors ${isFuture ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-700 cursor-pointer'} ${baseBg}`}
+                                        className={`relative h-16 sm:h-24 p-1 sm:p-2 border border-gray-700/50 rounded-md transition-colors
+                                            ${isFuture ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-700 cursor-pointer'} ${baseBg}`}
                                         onClick={() => !isFuture && setSelectedDate(d)}
                                     >
-                                        <div className={`relative inline-block w-8 h-8 ${isToday ? 'animate-pulse' : ''}`}>
+                                        <div className={`relative inline-block w-6 h-6 sm:w-8 sm:h-8 ${isToday ? 'animate-pulse' : ''}`}>
                                             {isToday && (
                                                 <span className="absolute inset-0 rounded-full bg-blue-500 opacity-30 blur-lg"></span>
                                             )}
-                                            <span className={`relative z-10 text-lg font-bold w-8 h-8 flex items-center justify-center rounded-full ${isToday ? 'bg-blue-600 text-white' : textColor}`}>
+                                            <span className={`relative z-10 text-sm sm:text-lg font-bold w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full ${isToday ? 'bg-blue-600 text-white' : textColor}`}>
                                                 {d.getDate()}
                                             </span>
                                         </div>
@@ -192,11 +195,11 @@ const WorkoutTrackerPage = () => {
                         </div>
 
                         {/* Legend */}
-                        <div className="mt-8 pt-4 border-t border-gray-700 flex flex-wrap justify-center gap-x-6 gap-y-2">
+                        <div className="mt-6 pt-4 border-t border-gray-700 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-sm">
                             {Object.entries(workoutTypeColors).map(([type, colorClass]) => (
                                 <div key={type} className="flex items-center gap-2">
                                     <div className={`w-3 h-3 rounded-full ${colorClass}`}></div>
-                                    <span className="text-xs text-gray-400">{type}</span>
+                                    <span className="text-gray-400">{type}</span>
                                 </div>
                             ))}
                         </div>

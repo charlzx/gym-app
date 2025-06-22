@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const navLinks = [
@@ -25,9 +25,9 @@ const Header = () => {
       : 'text-gray-300 hover:text-blue-400';
 
     return (
-      <a
+      <Link
         key={index}
-        href={link.href}
+        to={link.href}
         className={`transition duration-300 relative py-2 ${activeClass}`}
       >
         {link.label}
@@ -37,17 +37,17 @@ const Header = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
         )}
-      </a>
+      </Link>
     );
   };
 
   return (
     <header className="bg-gray-800 shadow-lg fixed top-0 left-0 right-0 z-50">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold text-white tracking-wider flex items-center">
+        <Link to="/" className="text-2xl font-bold text-white tracking-wider flex items-center">
           <img src={logo} alt="Logo" style={{ height: '25px', backgroundColor: '#fff', marginRight: '5px' }} />
           SMART
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8 items-center">
@@ -76,10 +76,10 @@ const Header = () => {
       >
         <div className="flex justify-between items-center px-6 py-4">
           <span className="text-white text-2xl font-bold">
-            <a href="/" className="flex items-center text-white tracking-wider">
+            <Link to="/" className="flex items-center text-white tracking-wider">
               <img src={logo} alt="Logo" style={{ height: '25px', backgroundColor: '#fff', marginRight: '5px' }} />
               SMART
-            </a>
+            </Link>
           </span>
           <button
             onClick={() => setIsMenuOpen(false)}
@@ -97,9 +97,9 @@ const Header = () => {
           {navLinks.map((link, index) => {
             const isActiveMobile = isActive(link.href);
             return (
-              <a
+              <Link
                 key={index}
-                href={link.href}
+                to={link.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`transition duration-300 ${isActiveMobile ? 'text-blue-400 font-bold' : 'hover:text-blue-400'}`}
               >
@@ -111,7 +111,7 @@ const Header = () => {
                     </span>
                   )}
                 </span>
-              </a>
+              </Link>
             );
           })}
         </div>

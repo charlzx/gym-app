@@ -253,7 +253,7 @@ const TimetablePage = () => {
                     }
                 `}
             </style>
-            <section id="timetable-page" className="py-16 sm:py-24">
+            <section id="timetable-page" className="py-16 sm:py-24 pt-30">
                 <div className="container mx-auto px-6 md:px-8">
                     <div className="text-center mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-white">Class Schedule</h1>
@@ -294,15 +294,15 @@ const TimetablePage = () => {
                         <table className="w-full text-sm text-center text-gray-300">
                             <thead className="text-xs text-white uppercase bg-gray-700">
                                 <tr>
-                                    <th scope="col" className="px-6 py-4">Time</th>
+                                    <th scope="col" className="px-6 py-4 bg-gray-700 sticky left-0 z-10">Time</th>
                                     {daysOfWeek.map(day => <th key={day} scope="col" className="px-6 py-4">{day}</th>)}
                                 </tr>
                             </thead>
                             <tbody>
                                 {timetableData.map((row, rowIndex) => (
                                     <tr key={row.time} className={`${rowIndex % 2 === 0 ? 'bg-gray-800' : 'bg-gray-700/50'}`}>
-                                        <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap">{row.time}</th>
-                                        {row.classes.map((className, classIndex) => {
+                                        <th scope="row" className="px-6 py-4 font-medium text-white whitespace-nowrap bg-gray-800 sticky left-0 z-0">{row.time}</th>
+                                            {row.classes.map((className, classIndex) => {
                                             const isClassVisible = isVisible(row.types[classIndex], row.time, row.intensities[classIndex]);
                                             const isClickable = className !== 'Open Gym';
                                             return (
@@ -322,7 +322,6 @@ const TimetablePage = () => {
                         </table>
                     </div>
 
-                    <ClassOfTheWeek />
                     <GymEtiquette />
                 </div>
             </section>

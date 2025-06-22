@@ -237,7 +237,7 @@ const ToolsPage = () => {
           </div>
           <div className="max-w-xl mx-auto">
             <div className="mb-8">
-              <div className="flex border-b border-gray-700">
+              <div className="flex flex-col sm:flex-row border-b border-gray-700">
                 {tabs.map(tab => (
                   <button
                     key={tab.id}
