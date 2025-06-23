@@ -20,7 +20,7 @@ const MembershipTier = ({ tier, billingCycle }) => {
       )}
       <h3 className="text-2xl font-bold text-white text-center">{name}</h3>
       <div className="mt-4 text-center text-white">
-        <span className="text-5xl font-extrabold">₦{price.toLocaleString()}</span>
+        <span className="text-5xl font-extrabold">&#8358;{price.toLocaleString()}</span>
         <span className="text-lg text-gray-400">/{isYearly ? 'year' : 'month'}</span>
       </div>
       <ul className="mt-8 space-y-4 text-gray-300 flex-grow">
@@ -215,7 +215,7 @@ const MembershipPage = () => {
   ];
 
   return (
-    <div className="bg-gray-900" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
+    <div className="bg-gray-900 overflow-x-hidden" style={{ fontFamily: "'IBM Plex Mono', monospace" }}>
       <Header />
       <section id="membership" className="py-16 sm:py-24 pt-30">
         <div className="container mx-auto px-6 md:px-8">

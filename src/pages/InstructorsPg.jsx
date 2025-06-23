@@ -36,7 +36,7 @@ const InstructorGridCard = ({ inst, onBookSession }) => (
 );
 
 const InstructorSwipeCard = ({ inst, onBookSession }) => (
-    <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden flex flex-col h-full relative text-white">
+    <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden flex flex-col h-135 relative text-white">
         <img src={inst.img} alt={inst.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
         <div className="p-6 flex flex-col flex-grow justify-end relative">
