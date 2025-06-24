@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/gym-app/',
   build: {
     outDir: 'dist',
   },
