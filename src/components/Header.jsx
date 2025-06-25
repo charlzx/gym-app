@@ -6,7 +6,7 @@ const navLinks = [
   { label: "Timetable", href: "/timetablepg", type: "anchor" },
   { label: "Instructors", href: "/instructorspg", type: "anchor" },
   { label: "Tracker", href: "/tracker", type: "route", isNew: true },
-  { label: "Planner", href: "/planner", type: "route" },
+  // { label: "Planner", href: "/planner", type: "route" },
   { label: "Tools", href: "/tools", type: "route" },
   { label: "Analytics", href: "/analytics", type: "route" },
   { label: "Membership", href: "/membership", type: "route" },
