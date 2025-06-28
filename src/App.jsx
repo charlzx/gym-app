@@ -6,7 +6,7 @@ import Tools from './pages/Tools';
 import Tracker from './pages/Tracker';
 import Authpage from './pages/Auth';
 import AnalyticsPage from './pages/Analytics';
-// import Planner from './pages/Planner';
+import Planner from './pages/Planner';
 import Membership from './pages/Membership';
 import TimetablePage from './pages/TimetablePg';
 import InstructorsPage from './pages/InstructorsPg';
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/Tracker" element={<Tracker />} />
         <Route path="/Auth" element={<Authpage />} />
         <Route path="/Analytics" element={<AnalyticsPage />} />
-        {/* <Route path="/Planner" element={<Planner />} /> */}
+        <Route path="/Planner" element={<Planner />} />
         <Route path="/Membership" element={<Membership />} />
         <Route path="/TimetablePg" element={<TimetablePage />} />
         <Route path="/InstructorsPg" element={<InstructorsPage />} />
