@@ -126,7 +126,7 @@ const AIPlannerPage = () => {
         setPlan('');
         setError('');
 
-        const apiKey = "AIzaSyDb8YRVxZhPhy46Y2qREllD6sFUuYsKAlo"; // IMPORTANT: Replace with your actual key
+        const apiKey = "";
         if (apiKey === "YOUR_API_KEY_HERE") {
             setError("Please add your Google AI API key to the code.");
             setIsLoading(false);
